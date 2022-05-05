@@ -5,17 +5,15 @@ import styled from 'styled-components';
 
 const axios = require('axios');
 
-const ListScores = function ListScores({ username, round }) {
-  const [count, setCount] = useState(0);
-  useEffect(() => {
-    setCount(count + 1);
-  }, [round]);
+const ListScores = function ListScores({ username, round, count }) {
 
   return(
 
     <CSS.List>
-      <div>{count}:</div>
+      <div>{count}</div>
+      &nbsp; &nbsp; &nbsp; &nbsp;
       <div>{username}</div>
+      &nbsp; &nbsp; &nbsp; &nbsp;
       <div>{round}</div>
     </CSS.List>
 

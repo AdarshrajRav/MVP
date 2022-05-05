@@ -6,6 +6,11 @@ const CSS = {
   width: 90%;
   padding: 10px;
   `,
+  Title: styled.h1`
+  background-color: #fff;
+  border: 2px solid #FFD4CD;
+  border-radius: 3px;
+  `,
   Header: styled.div`
   margin: auto;
   display: flex;
@@ -24,21 +29,23 @@ const CSS = {
   font-weight: 300;
   color: black;
   background-color: #fff;
-  border: 2px solid #4b15a3;
+  border: 2px solid #FFD4CD;
   border-radius: 3px;
   cursor: pointer;
   transition-duration: 0.4s;
   &:hover {
   box-shadow: 0 0 5px 5px rgba(17, 16, 62, 0.15);
-  background: #4b15a3;
+  background: #FFD4CD;
   color: white;
   &:active {
-    color: #4b15a3;
+    color: #FFD4CD;
   };
   `,
   GameBar: styled.div`
   margin: auto;
-  border: 3px solid green;
+  background-color: #fff;
+  border: 2px solid #FFD4CD;
+  border-radius: 3px;
   display: flex;
   margin-top: 20px;
   justify-content: space-evenly;
@@ -49,21 +56,25 @@ const CSS = {
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
-  border: 3px solid green;
+  background-color: #fff;
+  border: 2px solid #FFD4CD;
+  border-radius: 3px;
   margin-top: 20px;
   width: 100%;
   `,
   Scores: styled.div`
   margin: auto;
-  border: 3px solid green;
+  background-color: #fff;
+  border: 2px solid #FFD4CD;
+  border-radius: 3px;
   margin-top: 20px;
-  width: 50%;
+  width: 30%;
   `,
   List: styled.div`
   margin: auto;
   display: flex;
   flexDirection: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   width: 80%;
   `,
   Modal: styled.div`
@@ -96,7 +107,12 @@ const CSS = {
   display: flex;
   justify-content: center;
   width: 50vw;
-  `
+  `,
+  Layout: styled.div`
+  display: flex;
+  flexDirection: column;
+  justify-content: center;
+  `,
 };
 
 export default CSS;

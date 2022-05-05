@@ -11,6 +11,7 @@ const Game = function Game({ round, setRound }) {
   const [arr, setArr] = useState([true]);
   // max is 151
   const [poke, setPoke] = useState(Math.floor((Math.random() * 150) + 1));
+  const [timer, setTimer] = useState(true);
 
   let url = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/";
 
@@ -27,11 +28,17 @@ const Game = function Game({ round, setRound }) {
     setPoke(Math.floor(Math.random() * 151))
     axios.get
   }
+  const restart = function restart() {
+    setTimer(false);
+    setRound(1);
+    setArr([true]);
+    setTimer(true);
+  }
   // will turn this to model
   const renderer = ({ hours, minutes, seconds, completed }) => {
-    if (completed) {
+    if (completed && timer) {
       // Render a complete state
-      return <Modal />;
+      return <Modal round={round} restart={() => restart()} />;
     } else {
       // Render a countdown
       return (

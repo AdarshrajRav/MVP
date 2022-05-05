@@ -17,7 +17,7 @@ function App() {
   return (
     <CSS.Center>
       <CSS.Header>
-        <h1>Find That Pokemon!</h1>
+        <CSS.Title>Find That Pokemon!</CSS.Title>
       </CSS.Header>
       <CSS.Header>
         <CSS.MainButtons type="button"  onClick={() => setRender('game')} >Play</CSS.MainButtons>

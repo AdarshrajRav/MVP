@@ -8,10 +8,8 @@ const axios = require('axios');
 const Scores = function Scores({ render }) {
   // get data from database
   const [results, setResults] = useState([]);
-  // for list scores to keep track of tables
-  const [count, setCount] = useState(1);
+  let count = 0;
   useEffect(() => {
-    setCount(1);
     axios.get(`score`)
       .then((res) => {
         setResults(res.data);
@@ -23,8 +21,11 @@ const Scores = function Scores({ render }) {
 
       <CSS.Scores>
         <h1>Top Scores:</h1>
-        {results.map((e) =>
-        <ListScores username={e['username']} round={e.round} count={count} setCount={setCount} />
+        {results.map((e) => {
+          count += 1;
+          return (
+        <ListScores username={e['username']} round={e.round} count={count} />
+        )}
         )}
       </CSS.Scores>
     </div>
