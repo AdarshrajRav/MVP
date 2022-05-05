@@ -5,7 +5,7 @@ import Game from './Game'
 const axios = require('axios');
 
 function App() {
-  const [render, setRender] = useState('scores');
+  const [render, setRender] = useState('game');
   const [round, setRound] = useState(1);
 
   const renderComponent = function renderComponent() {

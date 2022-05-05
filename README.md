@@ -1,20 +1,28 @@
+# MVP #
+---
+## Overview ##
 
-# Movie List
+Find the pokeome in the box of pokemone within 5 seconds.
+---
+## Getting started ##
 
-## Getting Started
+### Installation And Running the page ###
 
-1. Fork and clone this repo, then open two terminal tabs and navigate to the root directory.
+To run this program, inside of the project's root directory you will need to:
 
-2. In one of the two seperate terminal tabs run the following script:
-  ```
-  npm start
-  ```
+  1. `npm install`
+  2. `npm run build`
+  3. `npm start`
+---
+## Contents ##
 
-3. In the second terminal tab run:
-  ```
-  npm run react-dev
-  ```
+  Title of game.
+  Play button and High Score button.
+  List of high scores
+  Header with Pokemon that you need to find, round number, and time left.
+  Box of random pokemon and the one pokeome you need to click on.
 
-4. Open localhost:3000 in the browser and you should see **Hello World!** if React is running correctly.
+---
+## Contacts ##
 
-Now you can get started building the application by visiting gLearn and following the next instructions there.
+Adarsh Ravindran  - [Linkedin](https://www.linkedin.com/in/adarshraj-ravindran-75832a183/)
