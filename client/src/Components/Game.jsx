@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import CSS from './css';
 import Pokemon from './Pokemon';
 import Countdown from 'react-Countdown';
+import Modal from './modal'
 
 const axios = require('axios');
 
@@ -26,11 +27,11 @@ const Game = function Game({ round, setRound }) {
     setPoke(Math.floor(Math.random() * 151))
     axios.get
   }
-  const Completionist = () => <span>You are good to go!</span>;
+  // will turn this to model
   const renderer = ({ hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a complete state
-      return <Completionist />;
+      return <Modal />;
     } else {
       // Render a countdown
       return (
@@ -50,7 +51,7 @@ const Game = function Game({ round, setRound }) {
         </h1>
         <h1>Round:{round}</h1>
         <h1>Countdown:
-          <Countdown date={Date.now() + 5000} renderer={renderer} />
+          {round != 1 ? <Countdown date={Date.now() + 5000} renderer={renderer} /> : 'First Round'}
         </h1>
       </CSS.GameBar>
       <CSS.Game>

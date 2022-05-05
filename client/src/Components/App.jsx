@@ -10,7 +10,7 @@ function App() {
 
   const renderComponent = function renderComponent() {
     if(render === 'scores') {
-      return <Scores />;
+      return <Scores render={render} />;
     }
     return <Game round={round} setRound={setRound} />
   }

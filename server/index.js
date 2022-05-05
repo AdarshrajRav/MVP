@@ -3,17 +3,38 @@ const path = require('path');
 const expressStaticGzip = require('express-static-gzip');
 const axios = require('axios');
 const app = express();
+const { Pool } = require('pg');
+const db = require('../db/models');
 const PORT = process.env.PORT || 3000;
+require('dotenv').config();
+
+const pool = new Pool({
+  user: process.env.dbUser,
+  host: process.env.dbHost,
+  database: process.env.db,
+  port: '5432'
+});
 
 app.use(express.json());
 app.use(expressStaticGzip(`${__dirname}/../client/dist`));
 
 const url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon';
 
-app.get('/pokemon/:id', (req, res) => {
-  axios.get(`${url}/${req.params.id}.png`)
-    .then((data) => res.send(data.data))
-    .catch((err) => res.send(err));
+app.get('/score', (req, res) => {
+  db.getScore()
+      .then((data) => {
+        res.send(data.rows);
+      })
+      .catch((error) => console.log(error));
+});
+app.post('/score', (req, res) => {
+  let username = req.query.username;
+  let round = req.query.round;
+  db.postScore(username, round)
+      .then((data) => {
+        res.send(data.status);
+      })
+      .catch((error) => console.log(error));
 
 });
 

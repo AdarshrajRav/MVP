@@ -66,6 +66,37 @@ const CSS = {
   justify-content: space-evenly;
   width: 80%;
   `,
+  Modal: styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.25);
+  z-index: 90;
+  `,
+  ModalContent: styled.div`
+  position: fixed;
+  background: white;
+  width: 50vw;
+  height: 80vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1%;
+  z-index: 100;
+  overflow-y: scroll
+  `,
+  Close: styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 48vw;
+  `,
+  CenterInfo: styled.div`
+  display: flex;
+  justify-content: center;
+  width: 50vw;
+  `
 };
 
 export default CSS;
